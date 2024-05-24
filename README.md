@@ -3,6 +3,14 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+## Steps for bug
+1. Run `ember s`
+2. Page is loading and will be auto redirected to sub route "base"
+3. Refresh page (F5)
+4. Error `Uncaught TypeError: routeInfos[(routeInfoLength - 1)] is undefined`
+
+Reason: it occur, because we have in base route a queryParameter with default value `null` (`@tracked messageType = null;`). Removing default value `null` fix the problem
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
